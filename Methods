@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Methods
+{
+    internal class Program
+    {
+        //Thanks to methods we can control from one place  the same operations 
+        //which should be  repeated in many places 
+        static void Main(string[] args)
+        {
+            Add();
+            var result =  Add2(20, 12);
+            Console.WriteLine(result);
+            var result2 = Add3(7); //when the value of the second parameter is not assigned it uses the default value
+            Console.WriteLine(result2);
+            Console.WriteLine(Multiply(2,4));
+            Console.WriteLine(Multiply(2, 4, 8));
+            //1-6 arasındaki tüm sayıların çıktısını verir
+            Console.WriteLine(Add4(1, 2, 3, 4, 5, 6, 7));
+            Console.ReadLine();
+        }
+        static void Add()
+        {
+            Console.WriteLine("Added!");
+        }
+        static int Add2(int number1, int number2)
+        {
+            var result = number1 + number2;
+            return number1 + number2;
+        }
+        //Methods with default parameters
+        //default values are always at the end of the method
+        //i.e. we can not give a default value to the first parameter
+        static int Add3(int number3, int number4 = 20)
+        {
+            var result2 = number3 + number4;
+            return result2;
+
+        }
+        //int degerinin metodun içindeki degere dönüsmesini ve 
+        // metoddan ciktiktan sonra da metod icinde aldigi degerde
+        // kalmasini istiyorsak metotta tanımlarken ve metodu cagirirken
+        //  sözkonusu degiskenin basina ref keywordunu yazariz ve artik o degisken yeni
+        //  degerini almis olur bir diger alternatifi ise out keywordudur
+        //  ancak outun farkı ref keywordu mutlaka sözkonusu degisken için metod disinda bir
+        //baslangic degeri isterken out keywordu yalnizca metodun icinde bir baslangic degeri ister
+
+        static int Multiply(int number5, int number6)
+        {
+            return number5 * number6;
+        }
+        //uc sayiyi carpmak istiyorsak
+        //method overloading
+        static int Multiply(int number5, int number6,int number7)
+        {
+            return number5 * number6 * number7;
+        }
+
+        static int Add4(int number1, int number2)
+        {
+            return number1 + number2;
+        }
+        //uc sayi toplamak icin uc parametre kullanabiliriz
+        //peki ya toplayacagimiz sayı sayısı on yirmi otuz ++ giderse tek tek overloading mi yapacagiz
+        //bu durumda params keywordunu kullanırız
+        static int Add4(params int[] numbers)
+        {
+            //Sum() metodu dizideki sayıları toplar
+            return numbers.Sum();
+        }
+    }
+}

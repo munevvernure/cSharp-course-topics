@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//namespace TypesAndVariables
+//{
+//    internal class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("Hello World!");
+//            Console.ReadLine();
+//            //Hello world yazdirir
+//        }
+//    }
+//}
+
+
+namespace TypesAndVariables
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //value types
+
+
+
+            int number1 = 10;
+            //long veri tipi bellekte int veri tipinin iki katı kadar yer kaplar
+            long number2 = 2147483647;
+            //short veri tipim ise 16bitlik yer tutar
+            short number3 = -32768; //(-32768 ile 32767 arasındaki degerleri tutar) 
+            //byte veri tipi bellekte 8 bit yani bir byte yer kaplar ( 0 ile 255 arasında değer tutabilir)
+            byte number4 = 255;
+            //bool veri tipi true ya da false degerlerini tutar
+            bool condition = true;
+            char character = 'A';
+            //ondalik sayilari tutmak için double veri tipini kullanırız
+            double number5 = 10.4;
+            //int ile long arasındaki ilişki double ile decimal arasında vardır
+            //double virgülden sonra on beş on beş karakter tutabiliyorken decimal veri tipi yirmi sekiz karakter tutabilir
+            //decimalde virgülden sonraki sayının sonuna m harfi eklenerek tanımlanır
+            decimal number6 = 10.4757890m;
+            var number7 = 10; //ilk atadıgim deger int oldugu icin bundan sonra atanan her deger int olarak kabul edilir
+            number7 = 'A'; //ciktisini alirsak ASCII degerini int olark verir
+           // number7 = "A"; // dersek cikti alamayiz cunku number7 degerini bir int olarak tanimladik başta
+
+
+            Console.WriteLine("Number1 is {0} ", number1);
+            Console.WriteLine("Number2 is {0} ", number2);
+            Console.WriteLine("Number3 is {0} ", number3);
+            Console.WriteLine("Number4 is {0} ", number4);
+            //characterin başına int yazdığımızda yazmış olduğumuz karakterin ASCII karşılığını yazdırırız
+            Console.WriteLine("Character is : {0} ",(int) character);
+            Console.WriteLine("Number5 is {0} ", number5);
+            Console.WriteLine("Number6 is {0} ", number6);
+            Console.WriteLine((int)Days.Friday); //basina int ekleyerek veri tipini donusturebiliriz
+            Console.ReadLine();
+
+        }
+    }
+
+    enum Days
+    {
+        Monday,Tuesday,Wednsday,Thursday,Friday,Saturday,Sunday
+    }
+}
